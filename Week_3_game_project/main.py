@@ -3,7 +3,7 @@ from characters.warrior import Warrior
 from characters.mage import Mage
 from characters.healer import Healer
 from characters.rogue import Rogue
-
+from characters.archer import Archer
 
 # Simulating Dynamic Behavior
 def battle_round(character, target):
@@ -27,6 +27,8 @@ def battle_round(character, target):
         print(character.cast_spell())  # Cast a spell
     elif isinstance(character, Healer):  # If the character is a Healer
         print(character.heal(target))  # Heal the target
+    elif isinstance(character, Archer):  # If the character is an Archer
+        print(character.fire_arrow(target))  # Fire an arrow at the target
     elif isinstance(character, Warrior):  # If the character is a Warrior
         print(character.strength)  # Display the warrior's strength
 
@@ -34,10 +36,16 @@ def battle_round(character, target):
     print(character.display_info())
     print(target.display_info())
 
-    if __name__ == "__main__":
-        # Create sample characters
-        gandalf = Mage("Gandalf", 50, 200, 150)
-        dark_knight = Warrior("Dark Knight", 45, 250, 80)
+if __name__ == "__main__":
+    # Create sample characters
+    spencer = Archer("spencer", 50, 200, 150, 0)
+    dark_knight = Warrior("Dark Knight", 45, 250, 80)
 
-        # Simulate a battle round
-        battle_round(gandalf, dark_knight)
+    # Simulate a battle round
+    battle_round(spencer, dark_knight)
+
+
+
+
+
+
